@@ -9,11 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HelperClass {
 private static HelperClass helperclass;
 	
-	private static WebDriver driver;
-	private static WebDriverWait wait;
+	public static WebDriver driver;
+	public static WebDriverWait wait;
 	public final static int TIMEOUT = 10;
 	
-	HelperClass(){
+	public HelperClass(){
 		driver = new ChromeDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
