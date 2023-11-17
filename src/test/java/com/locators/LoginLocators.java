@@ -4,48 +4,77 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginLocators {
-	@FindBy(xpath="//a[contains(.,'User Login')]")
+	@FindBy(xpath="//a[@href='https://demo.smart-hospital.in/site/userlogin']")
 	public WebElement clickuserLogin;
-	@FindBy(xpath="//div[@class='form-group']/following-sibling::button[1]")
+	
+	@FindBy(xpath="//button[@class='btn']")
 	public WebElement clicksignIn;
+	
 	@FindBy(xpath ="//span[text()='My Appointments']")
 	public WebElement clickmyAppointments;
-	@FindBy(xpath = "//a[contains(.,'Add Appointment')]")
+	
+	@FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
 	public WebElement clickaddAppointment;
-	@FindBy (xpath = "//input[@class='form-control date']")
+	
+	@FindBy (xpath = "//input[@id='dates']")
 	public WebElement setDate;
-	@FindBy(xpath ="(//td[text()='29'])[2]")
-	public WebElement clickDate;
-	@FindBy(xpath ="(//select[@class='form-control'])[2]")
+	
+	@FindBy(xpath ="//select[@id='specialist']")
 	public WebElement selectSpecialist;
-	@FindBy(xpath="(//select[@class='form-control'])[3]")
+	
+	@FindBy(xpath="//select[@name='doctor']")
 	public WebElement selectDoctor;
-	@FindBy(xpath ="(//select[@class='form-control select2'])[1]")
+	
+	@FindBy(xpath ="//select[@name='global_shift']")
 	public WebElement selectShift;
-	@FindBy(xpath ="(//select[@class='form-control select2'])[2]")
+	
+	@FindBy(xpath ="//select[@id='shift_id']")
 	public WebElement selectSlot;
-	@FindBy(xpath="(//textarea[@class='form-control'])[1]")
+	
+	@FindBy(xpath="//textarea[@id='message']")
 	public WebElement setMessage;
-	@FindBy(xpath="//select[@id='live_consult']")
+	
+	@FindBy(xpath="//select[@name=\"live_consult\"]")
 	public WebElement setConsultation;
-	@FindBy(xpath="//button[contains(@class,'btn btn-info')]")
+	
+	@FindBy(id="slot_7")
+	public WebElement setSlot;
+	
+	@FindBy(xpath="//button[@id='formaddbtn']")
 	public WebElement clickSave;
-	@FindBy(xpath ="//i[@class='fa fa-file-pdf-o']")
+	
+	@FindBy(xpath= "//input[@type='search']")
+	public WebElement search2;
+	
+	@FindBy(xpath ="//a[@class='btn btn-default dt-button buttons-pdf buttons-html5']")
 	public WebElement clicksaveASPDF;
-	@FindBy(xpath ="//a[contains(.,'Pharmacy')]")
+	
+	@FindBy(xpath ="//a[@href='https://demo.smart-hospital.in/patient/dashboard/bill']")
 	public WebElement clickPharmacy;
-	@FindBy(xpath="//div[@class='dataTables_filter']//input[1]")
+	
+	@FindBy(xpath="//input[@type='search']")
 	public WebElement search;
-	@FindBy(xpath ="//span[text()=' Pathology']")
+	
+	@FindBy(xpath ="//a[@href='https://demo.smart-hospital.in/patient/dashboard/search']")
 	public WebElement pathology;
-	@FindBy(xpath="//i[@class='fa fa-plus']")
+	
+	@FindBy(xpath="//a[@href='https://demo.smart-hospital.in/user/calendar/']")
+	public WebElement calender;
+	
+	@FindBy(xpath="//button[@class='btn btn-primary btn-sm pull-right']")
 	public WebElement addTODO;
-	@FindBy(xpath="(//input[@class='form-control'])[1]")
+	
+	@FindBy(xpath="//input[@id='task-title']")
 	public WebElement title;
-	@FindBy(xpath="//input[@class='form-control date']")
+	
+	@FindBy(xpath="//input[@id='task-date']")
 	public WebElement todoDate;
-	@FindBy(xpath ="(//button[contains(@class,'btn btn-primary')])[2]")
+	
+	@FindBy(xpath ="//button[@type='submit']")
 	public WebElement save;
+	//assert locators
+	@FindBy(xpath="//span[text()='fdsg']")
+	public WebElement valid;
 }
 	
 	
