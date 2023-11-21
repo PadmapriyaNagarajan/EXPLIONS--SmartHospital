@@ -6,54 +6,94 @@ import org.openqa.selenium.support.FindBy;
 
 public class BillingLocators {
 	
-	@FindBy(xpath = "//i[@class='fas fa-file-invoice']/following-sibling::span[1]")
-	public
-	WebElement billingButton;
-
-	@FindBy(xpath = "(//div[@class='billingbox text-center']//a)[1]")
-	public WebElement opd;
-	@FindBy(xpath = "//a[contains(@class,'btn btn-primary')]")
-	public WebElement opdAddPatient;
-	@FindBy(xpath = "//span[text()='New Patient']")
-	public WebElement NewPatient;
-	@FindBy(xpath = "((//label[text()='Name'])[2]/following::input)[1]")
-	public WebElement name;
-	@FindBy(xpath = "(//label[text()='Age (yy-mm-dd) ']/following::input)[1]")
-	public WebElement year;
-	@FindBy(xpath = "(//label[text()='Age (yy-mm-dd) ']/following::input)[2]")
-	public WebElement month;
-	@FindBy(xpath = "//input[@id='age_month']/following-sibling::input[1]")
-	public WebElement day;
-	@FindBy(xpath = "//p[text()='The Age field is required.']")
-	public WebElement ErrorMessage;
-	@FindBy(xpath = "//button[text()=' Save']")
-	public WebElement savePatient;
-	@FindBy(xpath = "//button[@class='toast-close-button']/following-sibling::div[1]")
-	public WebElement ChecksavePatient;
-	@FindBy(xpath = "(//label[text()='Appointment Date']/following::input)[1]")
-	public WebElement appointmentDate;
-	@FindBy(xpath = "(//span[@class='select2-selection select2-selection--single']//span)[3]")
-	public WebElement ConsultantDoctor;
-	@FindBy(xpath = "//li[@class='select2-results__option select2-results__option--highlighted']/following-sibling::li[1]")
-	public WebElement doctor;
-	@FindBy(xpath = "(//small[@class='req']/following-sibling::input)[3]")
-	public WebElement appliedCharges;
-	@FindBy(xpath = "//label[text()='Paid Amount ($)']/following-sibling::input")
-	public WebElement PaidCharges;
-	@FindBy(xpath = "(//span[@class='select2-selection__rendered'])[3]")
-	public WebElement chargeCatogory;
-	@FindBy(xpath = "//li[text()[normalize-space()='OPD Consultation Fees']]")
-	public WebElement OPDLevelCheck;
-	@FindBy(xpath = "//span[@title='Select']")
-	public WebElement charge;
-	@FindBy(xpath = "//li[text()='Consultation Fees ']")
-	public WebElement chargeDropDown;
-	@FindBy(xpath = "//button[@name='save']//span[1]")
-	public WebElement SaveAndPrint;
-	@FindBy(xpath = "//input[@type='search']")
-	public WebElement SearchField;
-	@FindBy(xpath = "(//tr[@role='row']//a)[1]")
-	public WebElement AddedPatientList;
-	@FindBy(xpath = "//p[text()='The Paid Amount field is required.']")
-	public WebElement ErrorPaidMessage;
+		//user login
+		@FindBy(xpath="//a[@href='https://demo.smart-hospital.in/site/userlogin']")
+		public WebElement login;
+		
+		//sign in
+		@FindBy(xpath="//button[@type='submit']")
+		public WebElement signIn;
+		
+		//radiology
+		@FindBy(xpath="(//a[@href='https://demo.smart-hospital.in/patient/dashboard/radioreport'])[1]")
+		public WebElement radiology;
+		
+		@FindBy(xpath="//h3[contains(text(),' Radiology Test Reports')]")
+		public WebElement assertRadiology;
+		
+		@FindBy(xpath="//div[@class='dataTables_filter']//child::input")
+		public WebElement search1;
+		
+		@FindBy(xpath="//a[@class='btn btn-default dt-button buttons-csv buttons-html5']//following-sibling::a[1]")
+		public WebElement pdf;
+		
+		//ambulance
+		@FindBy(xpath="(//a[@href='https://demo.smart-hospital.in/patient/dashboard/ambulance'])[1]")
+		public WebElement ambulance;
+		
+		@FindBy(xpath="//h3[contains(text(),' Ambulance Bill')]")
+		public WebElement assertAmbulance;
+		
+		@FindBy(xpath="(//button[@class='btn btn-primary btn-xs'])[4]")
+		public WebElement pay;
+		
+		@FindBy(css="button#pay_button")
+		public WebElement add;
+		
+		@FindBy(xpath="//span[contains(text(),'Pay with Card')]")
+		public WebElement payCard;
+		
+		@FindBy(xpath="//iframe[@src='https://js.stripe.com/v2/m/outer.html#referrer=https%3A%2F%2Fdemo.smart-hospital.in%2F&title=Stripe%20Checkout&url=https%3A%2F%2Fcheckout.stripe.com%2Fv3%2Foivkx0oP8BgueCG8QFpDfA.html%3Fdistinct_id%3D7a5f550c-c665-8b42-0dd1-e449ab4586c4&muid=NA&sid=NA&version=6&preview=false&']")
+		public WebElement iframe;
+		
+		@FindBy(xpath="//input[@type='email']")
+		public WebElement email;
+		
+		@FindBy(xpath="//input[@id='card_number']")
+		public WebElement cardNumber;
+		
+		@FindBy(xpath="//input[@id='cc-exp']")
+		public WebElement expiry;
+		
+		@FindBy(xpath="//input[@id='cc-csc']")
+		public WebElement cvc;
+		
+		@FindBy(xpath="//input[@id='billing-zip']")
+		public WebElement zip;
+		
+		@FindBy(xpath="//span[@class='iconTick']")
+		public WebElement payment;
+		
+		@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+		public WebElement assertText;
+		
+		//blood bank
+		@FindBy(xpath="//a[@href='https://demo.smart-hospital.in/patient/dashboard/bloodbank']")
+		public WebElement bloodBank;
+		
+		@FindBy(xpath="//a[@href='#activity']")
+		public WebElement componentIssue;
+		
+		@FindBy(xpath="//div[@id='DataTables_Table_1_filter']//child::label//child::input")
+		public WebElement search2;
+		
+		//whatsapp
+		@FindBy(xpath="(//a[@class='todoicon'])[1]")
+		public WebElement whatsapp;
+		
+		@FindBy(xpath="(//li[@class='contact'])[1]")
+		public WebElement member;
+		
+		@FindBy(xpath="//input[starts-with(@placeholder, 'Write Your Message...')]")
+		public WebElement message;
+		
+		@FindBy(xpath="//button[@class='submit input_submit']")
+		public WebElement send;
+		
+		//logout
+		@FindBy(xpath="//li[@class='dropdown user-menu']//child::a")
+		public WebElement profile;
+		
+		@FindBy(xpath="//a[@href='https://demo.smart-hospital.in/site/logout']")
+		public WebElement logout;
 }
